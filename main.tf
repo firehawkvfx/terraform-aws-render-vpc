@@ -7,26 +7,12 @@ provider "aws" {
   version = "~> 3.15.0"
 }
 
-data "aws_region" "current" {}
-data "aws_caller_identity" "current" {}
+# Common tags are provided as an environment variable and depend on 'source update_var.sh' being run in cloud9.
+
 data "aws_canonical_user_id" "current" {}
-
 locals {
-  common_tags = {
-    environment  = var.environment
-    resourcetier = var.resourcetier
-    conflictkey  = var.conflictkey
-    # The conflict key defines a name space where duplicate resources in different deployments sharing this name are prevented from occuring.  This is used to prevent a new deployment overwriting and existing resource unless it is destroyed first.
-    # examples might be blue, green, dev1, dev2, dev3...dev100.  This allows us to lock deployments on some resources.
-    pipelineid = var.pipelineid
-    owner      = data.aws_canonical_user_id.current.display_name
-    accountid  = data.aws_caller_identity.current.account_id
-    region     = data.aws_region.current.name
-    vpc = "${var.resourcetier}_render_vpc"
-    terraform  = "true"
-  }
+  common_tags = merge(map("owner", data.aws_canonical_user_id.current.display_name), var.common_tags)
 }
-
 module "vpc" {
   source                       = "./modules/terraform-aws-vpc"
   vpc_name                     = "${var.resourcetier}_vault_vpc"

@@ -34,6 +34,6 @@ output "rendervpc_all_private_subnet_cidr_list" {
   value = module.rendervpc_all_private_subnet_cidrs.networks[*].cidr_block
 }
 
-output "common_tags_test" {
-  value = var.common_tags_test
+output "common_tags_map" {
+  value = var.common_tags_map
 }
