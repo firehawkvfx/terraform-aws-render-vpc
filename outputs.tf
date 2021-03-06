@@ -14,24 +14,24 @@ output "resourcetier_all_vpc_cidrs" {
   value = module.resourcetier_all_vpc_cidrs.network_cidr_blocks
 }
 
-output "vaultvpc_all_subnet_cidrs" {
-  value = module.vaultvpc_all_subnet_cidrs.network_cidr_blocks
+output "rendervpc_all_subnet_cidrs" {
+  value = module.rendervpc_all_subnet_cidrs.network_cidr_blocks
 }
 
-output "vaultvpc_all_private_subnet_cidrs" {
-  value = module.vaultvpc_all_private_subnet_cidrs.network_cidr_blocks
+output "rendervpc_all_private_subnet_cidrs" {
+  value = module.rendervpc_all_private_subnet_cidrs.network_cidr_blocks
 }
 
-output "vaultvpc_all_public_subnet_cidrs" {
-  value = module.vaultvpc_all_public_subnet_cidrs.network_cidr_blocks
+output "rendervpc_all_public_subnet_cidrs" {
+  value = module.rendervpc_all_public_subnet_cidrs.network_cidr_blocks
 }
 
-output "vaultvpc_all_public_subnet_cidr_list" {
-  value = module.vaultvpc_all_public_subnet_cidrs.networks[*].cidr_block
+output "rendervpc_all_public_subnet_cidr_list" {
+  value = module.rendervpc_all_public_subnet_cidrs.networks[*].cidr_block
 }
 
-output "vaultvpc_all_private_subnet_cidr_list" {
-  value = module.vaultvpc_all_private_subnet_cidrs.networks[*].cidr_block
+output "rendervpc_all_private_subnet_cidr_list" {
+  value = module.rendervpc_all_private_subnet_cidrs.networks[*].cidr_block
 }
 
 output "common_tags_test" {
