@@ -11,7 +11,7 @@ locals {
 }
 module "vpc" {
   source                       = "./modules/terraform-aws-vpc"
-  vpc_name                     = var.common_tags["vpcname"]
+  vpc_name                     = local.common_tags["vpcname"]
   vpc_cidr                     = module.rendervpc_all_subnet_cidrs.base_cidr_block
   public_subnets               = module.rendervpc_all_public_subnet_cidrs.networks[*].cidr_block
   private_subnets              = module.rendervpc_all_private_subnet_cidrs.networks[*].cidr_block
