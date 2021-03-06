@@ -114,5 +114,5 @@ variable "combined_vpcs_cidr" {
 
 variable "common_tags" {
   description = "Common tags for all resources in a deployment run."
-  type = map(string)
+  type        = map(string)
 }
