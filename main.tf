@@ -6,9 +6,8 @@ provider "aws" {
   version = "~> 3.15.0"
 }
 # Common tags are provided as an environment variable and depend on 'source update_var.sh' being run in cloud9.
-data "aws_canonical_user_id" "current" {}
 locals {
-  common_tags = merge(map("owner", data.aws_canonical_user_id.current.display_name), var.common_tags)
+  common_tags = var.common_tags
 }
 module "vpc" {
   source                       = "./modules/terraform-aws-vpc"
