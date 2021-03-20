@@ -59,13 +59,13 @@ variable "vault_consul_ami_id" {
 }
 
 variable "bastion_ami_id" {
-  description = "The prebuilt AMI for the bastion host. This should be a private ami you have build with packer from firehawk-main/modules/terraform-aws-vault/examples/bastion-ami."
+  description = "The prebuilt AMI for the bastion host. This should be a private ami you have built with packer from firehawk-main/modules/terraform-aws-vault/examples/bastion-ami."
   type        = string
   default     = null
 }
 
 variable "bastion_graphical_ami_id" {
-  description = "The prebuilt AMI for the bastion host. This should be a private ami you have build with packer from firehawk-main/modules/terraform-aws-vault/examples/nice-dcv-ami."
+  description = "The prebuilt AMI for the bastion host. This should be a private ami you have built with packer from firehawk-main/modules/terraform-aws-vault/examples/nice-dcv-ami."
   type        = string
   default     = null
 }
