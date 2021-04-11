@@ -108,7 +108,7 @@ variable "vault_vpc_subnet_count" { # If adjusting the max here, consider 2^new_
 }
 
 variable "combined_vpcs_cidr" {
-  description = "Terraform will automatically configure multiple VPCs and subnets within this CIDR range for any resourcetier ( dev / green / blue / main )."
+  description = "All AWS CIDR ranges exist within this CIDR Range."
   type        = string
 }
 
