@@ -10,7 +10,9 @@ locals {
   common_tags = var.common_tags
 }
 module "vpc" {
-  source                       = "./modules/terraform-aws-vpc"
+  # source                       = "./modules/terraform-aws-vpc"
+  source                       = "github.com/firehawkvfx/firehawk-main.git//modules/vpc/modules/terraform-aws-vpc?ref=v0.0.11"
+  enable_nat_gateway           = true
   vpc_name                     = local.common_tags["vpcname"]
   vpc_cidr                     = module.rendervpc_all_subnet_cidrs.base_cidr_block
   public_subnets               = module.rendervpc_all_public_subnet_cidrs.networks[*].cidr_block
@@ -23,7 +25,8 @@ module "vpc" {
 }
 
 module "consul_client_security_group" {
-  source              = "./modules/consul-client-security-group"
+  # source              = "./modules/consul-client-security-group"
+  source              = "github.com/firehawkvfx/firehawk-main.git//modules/vpc/modules/consul-client-security-group?ref=v0.0.11"
   common_tags         = local.common_tags
   create_vpc          = true
   vpc_id              = module.vpc.vpc_id
