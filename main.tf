@@ -28,7 +28,7 @@ module "consul_client_security_group" {
   create_vpc  = true
   vpc_id      = module.vpc.vpc_id
 
-  allowed_inbound_cidr_blocks = [module.resourcetier_all_vpc_cidrs.base_cidr_block, var.deployer_ip_cidr, var.remote_cloud_private_ip_cidr, var.remote_cloud_public_ip_cidr]
+  allowed_inbound_cidr_blocks = [module.resourcetier_all_vpc_cidrs.base_cidr_block, var.remote_cloud_private_ip_cidr, var.remote_cloud_public_ip_cidr]
 
 }
 module "resourcetier_all_vpc_cidrs" { # all vpcs contained in the combined_vpcs_cidr (current resource tier dev or green or blue or main)
