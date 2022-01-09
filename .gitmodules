@@ -1,6 +1,6 @@
 [submodule "modules/consul-client-security-group"]
 	path = modules/consul-client-security-group
-	url = ../consul-client-security-group.git
+	url = https://github.com/firehawkvfx/consul-client-security-group.git
 [submodule "modules/terraform-aws-vpc"]
 	path = modules/terraform-aws-vpc
-	url = ../terraform-aws-vpc.git
+	url = https://github.com/firehawkvfx/terraform-aws-vpc.git
