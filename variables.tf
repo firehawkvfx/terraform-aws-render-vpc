@@ -29,11 +29,6 @@ variable "aws_private_key_path" {
   default     = ""
 }
 
-variable "deployer_ip_cidr" {
-  description = "The public IP of the host used to ssh to the bastion, this may also potentially be a cloud 9 host.."
-  type        = string
-}
-
 variable "remote_cloud_private_ip_cidr" {
   description = "The remote private address that will connect to the bastion instance and other public instances.  This is used to limit inbound access to public facing hosts like the VPN from your site's public IP."
   type        = string
