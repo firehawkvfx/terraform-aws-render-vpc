@@ -38,8 +38,12 @@ module "resourcetier_all_vpc_cidrs" { # all vpcs contained in the combined_vpcs_
   base_cidr_block = var.combined_vpcs_cidr
   networks = [
     {
+      name     = "deployervpc"
+      new_bits = 9
+    },
+    {
       name     = "vaultvpc"
-      new_bits = 8
+      new_bits = 9
     },
     {
       name     = "rendervpc"
