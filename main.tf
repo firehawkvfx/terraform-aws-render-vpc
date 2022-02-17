@@ -18,8 +18,8 @@ module "vpc" {
   public_subnets               = module.rendervpc_all_public_subnet_cidrs.networks[*].cidr_block
   private_subnets              = module.rendervpc_all_private_subnet_cidrs.networks[*].cidr_block
   sleep                        = var.sleep
-  remote_cloud_public_ip_cidr  = var.remote_cloud_public_ip_cidr
-  remote_cloud_private_ip_cidr = var.remote_cloud_private_ip_cidr
+  # remote_cloud_public_ip_cidr  = var.remote_cloud_public_ip_cidr
+  # remote_cloud_private_ip_cidr = var.remote_cloud_private_ip_cidr
   common_tags                  = local.common_tags
 }
 
