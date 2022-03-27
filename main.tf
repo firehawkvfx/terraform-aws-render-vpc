@@ -1,10 +1,3 @@
-provider "null" {
-  version = "~> 3.0"
-}
-provider "aws" {
-  # in a dev environment these version locks below can be disabled.  in production, they should be locked based on the suggested versions from terraform init.
-  version = "~> 3.15.0"
-}
 # Common tags are provided as an environment variable and depend on 'source update_var.sh' being run in cloud9.
 locals {
   common_tags = var.common_tags
